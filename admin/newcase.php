@@ -15,7 +15,7 @@ $query="insert into  statements (complainant,complainant_id,investigating_office
 $stmt = $mysqli->prepare($query);
 $rc=$stmt->bind_param('siss',$complainant,$complainant_id,$investigating_officer,$statement);
 $stmt->execute();
-echo"<script>alert('Statement from $complainant recorded successfully;</script>";
+
 
 if($stmt){
 
@@ -26,7 +26,7 @@ if($stmt){
 	$stmt = $mysqli->prepare($query);
 	$rc=$stmt->bind_param('is',$id_no, $firstName );
 	$stmt->execute();
-	echo"<script>alert('You have successfully registered to the online case tracking system.');</script>";
+	echo"<script>alert('Statement recorded successfully;</script>";
 }
 }
 ?>

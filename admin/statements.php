@@ -109,7 +109,8 @@ while($row=$res->fetch_object())
 <td><?php echo $row->investigating_officer;?></td>
 <td><?php echo $row->statement;?></td>
 <td><?php echo $row->report_date;?></td>
-
+<td><a href="update.php?id=<?php echo $row->ob;?>"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;
+<a href="javascript:void(0);"  onClick="popUpWindow('http://localhost/ob/admin/casedetails.php?id=<?php echo $row->ob;?>');" title="View case statement and/or updates"><i class="fa fa-desktop"></i></a>&nbsp;&nbsp;
 										</tr>
 									<?php
 $cnt=$cnt+1;

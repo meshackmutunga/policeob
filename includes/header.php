@@ -1,7 +1,7 @@
 
 <?php if($_SESSION['id'])
 { ?><div class="brand clearfix">
-		<a href="#" class="logo" style="font-size:16px;">Police Digital Occurrence Book System</a>
+		<a href="dashboard.php" class="logo" style="font-size:16px;">Police Digital Occurrence Book System</a>
 		<span class="menu-btn"><i class="fa fa-bars"></i></span>
 		<ul class="ts-profile-nav">
 			<li class="ts-account">

@@ -61,13 +61,15 @@ check_login();
 									</tfoot>
 									<tbody>
 <?php	
-$aid=$_SESSION['id'];
-$ret="SELECT * FROM cases";
-$stmt= $mysqli->prepare($ret) ;
-//$stmt->bind_param('i',$aid);
-$stmt->execute() ;
-$res=$stmt->get_result();
-$cnt=1;
+
+$ret="SELECT * FROM statements where ob = '".$_GET['id']."'";
+
+ $stmt= $mysqli->prepare($ret) ;
+ //$stmt->bind_param('i',$aid);
+ $stmt->execute() ;//ok
+ $res=$stmt->get_result();
+
+ $cnt=1;
 while($row=$res->fetch_object())
 	  {
 	  	?>
@@ -85,7 +87,70 @@ $cnt=$cnt+1;
 										
 									</tbody>
 								</table>
+								<div class="row">
+					<div class="col-md-12">
+						<h2 class="page-title" style="margin-top: 4%">MY CASE UPDATES</h2>
+						<div class="panel panel-default">
+							<div class="panel-heading">All updates on existing cases </div>
+							<div class="panel-body">
+								<table id="zctb" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
+									<thead>
+										<tr>
+											<th>Sno.</th>
+											<th>OB Number</th>
+											<th>UPDATE</th>
+											<th>Updating officer</th>
+											
+											<th>Update date</th>
+											
+										</tr>
+									</thead>
+									<tfoot>
+										<tr>
+										<th>Sno.</th>
+											<th>OB Number</th>
+											<th>UPDATE</th>
+											<th>Updating officer</th>
+											
+											<th>Update date</th>
+											
+										</tr>
+									</tfoot>
+									<tbody>
+<?php	
+$aid=$_SESSION['id'];
+$ret="select * from followup where ob = 13 ";
+$stmt= $mysqli->prepare($ret) ;
+//$stmt->bind_param('i',$aid);
+$stmt->execute() ;//ok
+$res=$stmt->get_result();
 
+$cnt=1;
+while($row=$res->fetch_object())
+	  {
+	  	?>
+<tr><td><?php echo $cnt;;?></td>
+<td><?php echo $row->ob;?></td>
+<td><?php echo $row->update;?></td>
+<td><?php echo $row->updating_officer;?></td>
+<td><?php echo $row->update_date;?></td>
+
+										</tr>
+									<?php
+$cnt=$cnt+1;
+									 } ?>
+											
+										
+									</tbody>
+								</table>
+
+								
+							</div>
+						</div>
+
+					
+					</div>
+				</div>
 								
 							</div>
 						</div>

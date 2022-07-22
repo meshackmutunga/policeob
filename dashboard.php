@@ -72,24 +72,12 @@ check_login();
 													
 												</div>
 											</div>
-											<a href="cases.php" class="block-anchor panel-footer">View and search my cases<i class="fa fa-arrow-right"></i></a>
+											<a href="cases.php?id=<?php echo $_SESSION['id']?>" class="block-anchor panel-footer">View and search my cases<i class="fa fa-arrow-right "></i></a>
 										</div>
 									</div>
 									<div class="col-md-3">
 										
-										<div class="panel panel-default">
-											<div class="panel-body bk-primary text-light">
-												<div class="stat-panel text-center">
-
-
-
-													<div class="stat-panel-number h1 ">Updates</div>
-													
-												</div>
-											</div>
-											<a href="update.php" class="block-anchor panel-footer">View my case progress <i class="fa fa-arrow-right"></i></a>
-										</div>
-									</div>
+										
 									
 							
 								</div>

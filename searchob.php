@@ -100,35 +100,30 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
  if(isset($_POST['submit']))
 {
 
-    
-    
+	$ob=$_POST['ob'];
+	$ret="select * from statements where ob=?";
+	$stmt= $mysqli->prepare($ret) ;
 
-$ob=$_POST['ob'];
+	 $stmt->bind_param('i',$ob);
 
-$complainant=" ";
-
-
-
-$query="SELECT ob FROM statements WHERE=?";
-
-$stmt= $mysqli->query($query) ;
-
-
-while($row=$stmt->fetch_assoc())
-
- {
+	 $stmt->execute() ;//ok
+	 $res=$stmt->get_result();
+	 //$cnt=1;
+	   while($row=$res->fetch_object())
+	  {
+	  	?>
 
 
-                    ?>
+                
          
 <tr><td><?php echo '1';;?></td>
 <td><?php echo $ob;?></td>
-<td><?php echo $row["complainant"];?></td>
+<td><?php echo $row->complainant;?></td>
 <td><?php echo $row->complainant_id;?></td>
-<td><?php echo $investigating_officer;?></td>
+<td><?php echo $row->investigating_officer;?></td>
 <td><?php echo $row->statement;?></td>
 <td><?php echo $row->report_date;?></td>
-<td><a href="update.php?id=<?php echo $row->ob;?>"title="Give an update"><i class="fa fa-edit"></i></a>&nbsp;&nbsp;
+<td>
 <a href="javascript:void(0);"  onClick="popUpWindow('http://localhost/ob/admin/casedetails.php?id=<?php echo $row->ob;?>');" title="View case"><i class="fa fa-desktop"></i></a>&nbsp;&nbsp;
 										</tr>
 									<?php

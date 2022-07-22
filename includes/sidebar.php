@@ -6,7 +6,7 @@
 				{ ?>
 					<li><a href="dashboard.php"><i class="fa fa-desktop"></i>Dashboard</a></li>
 					<li><a href="my-profile.php"><i class="fa fa-user"></i> My Profile</a></li>
-<li><a href="change-password.php"><i class="fa fa-files-o"></i>Change Password</a></li>
+<li><a href="changepassword.php"><i class="fa fa-files-o"></i>Change Password</a></li>
 <li><a href="cases.php"><i class="fa fa-file-o"></i>View cases</a></li>
 <?php }
  else { ?>
